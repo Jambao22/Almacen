@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Productos | Almacén Toranzo</title>
+
+
+<!-- BOOTSTRAP 5 -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- FONT AWESOME -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+
+<style>
+
+
+:root{
+
+--marron:#5d4037;
+--beige:#f7f2ea;
+--verde:#7d9a58;
+--texto:#3d302a;
+
+}
+
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+background:var(--beige);
+font-family:Arial,Helvetica,sans-serif;
+padding-top:90px;
+
+}
+
+
+
+/********************************
+NAVBAR
+********************************/
+
+
+.navbar{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+z-index:9999;
+box-shadow:0 3px 15px rgba(0,0,0,.10);
+
+}
+
+
+
+.navbar-brand{
+
+font-size:32px;
+font-weight:900;
+color:var(--marron)!important;
+
+}
+
+
+
+.navbar-brand img{
+
+height:50px;
+margin-right:10px;
+
+}
+
+
+
+.nav-link{
+
+font-weight:bold;
+margin-left:15px;
+text-transform:uppercase;
+color:#444!important;
+
+}
+
+
+
+.nav-link:hover{
+
+color:var(--verde)!important;
+
+}
+
+
+
+
+
+/********************************
+HERO
+********************************/
+
+
+.hero{
+
+background:white;
+padding:70px 0;
+text-align:center;
+
+}
+
+
+
+.hero h1{
+
+font-size:55px;
+font-weight:900;
+color:var(--marron);
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+color:#666;
+
+}
+
+
+
+/********************************
+BUSCADOR
+********************************/
+
+
+.buscador{
+
+max-width:700px;
+margin:40px auto 0;
+position:relative;
+
+}
+
+
+
+.buscador input{
+
+width:100%;
+padding:18px 60px 18px 25px;
+border-radius:50px;
+border:none;
+box-shadow:0 5px 20px rgba(0,0,0,.12);
+font-size:20px;
+outline:none;
+
+}
+
+
+
+.buscador i{
+
+position:absolute;
+right:25px;
+top:22px;
+font-size:22px;
+color:#777;
+
+}
+
+
+
+
+
+/********************************
+CATEGORIAS
+********************************/
+
+
+.categorias{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:40px;
+
+}
+
+
+
+.categoria{
+
+background:white;
+padding:12px 25px;
+border-radius:50px;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+
+
+.categoria:hover,
+.categoria.activa{
+
+background:var(--verde);
+color:white;
+
+}
+
+
+
+
+
+/********************************
+PRODUCTOS
+********************************/
+
+
+#contenedorProductos{
+
+padding:70px 0;
+
+}
+
+
+
+.producto{
+
+background:white;
+height:100%;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+transition:.3s;
+
+}
+
+
+
+.producto:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.producto img{
+
+width:100%;
+height:240px;
+object-fit:cover;
+
+}
+
+
+
+.info{
+
+padding:20px;
+text-align:center;
+
+}
+
+
+
+.info h3{
+
+font-size:23px;
+font-weight:900;
+color:var(--marron);
+
+}
+
+
+
+.categoriaProducto{
+
+display:inline-block;
+background:#eef6e7;
+color:var(--verde);
+padding:6px 15px;
+border-radius:30px;
+font-size:13px;
+font-weight:bold;
+
+}
+
+
+
+.precio{
+
+font-size:28px;
+font-weight:bold;
+color:var(--verde);
+margin:20px 0;
+
+}
+
+
+
+.btnProducto{
+
+display:block;
+width:100%;
+border:none;
+background:var(--marron);
+color:white;
+padding:12px;
+border-radius:10px;
+font-weight:bold;
+
+}
+
+
+
+.btnProducto:hover{
+
+background:var(--verde);
+
+}
+
+
+
+
+
+/********************************
+FOOTER
+********************************/
+
+
+footer{
+
+background:var(--marron);
+color:white;
+padding:50px 0;
+text-align:center;
+margin-top:70px;
+
+}
+
+
+
+
+/********************************
+RESPONSIVE
+********************************/
+
+
+@media(max-width:768px){
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.navbar-brand{
+
+font-size:24px;
+
+}
+
+
+.producto img{
+
+height:200px;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- =========================
+NAVBAR
+========================= -->
+
+
+<nav class="navbar navbar-expand-lg">
+
+
+<div class="container">
+
+
+<a class="navbar-brand" href="index.html">
+
+
+<img src="logo.JPEG">
+
+
+Almacén Toranzo
+
+
+</a>
+
+
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+
+<span class="navbar-toggler-icon"></span>
+
+
+</button>
+
+
+
+<div class="collapse navbar-collapse" id="menu">
+
+
+<ul class="navbar-nav ms-auto">
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="index.html">
+
+Inicio
+
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="productos.html">
+
+Productos
+
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="nosotros.html">
+
+Nosotros
+
+</a>
+
+</li>
+
+
+
+<li class="nav-item">
+
+<a class="nav-link" href="nogoli.html">
+
+Nogolí
+
+</a>
+
+</li>
+
+
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<!-- =========================
+HERO
+========================= -->
+
+
+<section class="hero">
+
+
+<div class="container">
+
+
+<h1>
+
+Todos nuestros productos
+
+</h1>
+
+
+
+<p>
+
+Encontrá productos naturales y venta a granel.
+
+</p>
+
+
+
+<div class="buscador">
+
+
+<input
+
+type="text"
+
+id="buscar"
+
+placeholder="Buscar producto o código...">
+
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+
+</div>
+
+
+
+<div class="categorias">
+
+
+<div class="categoria activa" data-categoria="todos">
+
+TODOS
+
+</div>
+
+
+<div class="categoria" data-categoria="harinas">
+
+HARINAS
+
+</div>
+
+
+<div class="categoria" data-categoria="semillas">
+
+SEMILLAS
+
+</div>
+
+
+<div class="categoria" data-categoria="cereales">
+
+CEREALES
+
+</div>
+
+
+<div class="categoria" data-categoria="frutos secos">
+
+FRUTOS SECOS
+
+</div>
+
+
+<div class="categoria" data-categoria="especias">
+
+ESPECIAS
+
+</div>
+
+
+<div class="categoria" data-categoria="endulzantes">
+
+ENDULZANTES
+
+</div>
+
+
+<div class="categoria" data-categoria="otros">
+
+OTROS
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+LISTA PRODUCTOS
+========================= -->
+
+
+<section id="contenedorProductos">
+
+
+<div class="container">
+
+
+<div class="row g-4" id="listaProductos">
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+<script>
+
+const productos=[
+
+
+{
+codigo:1,
+nombre:"Leche de Coco en Polvo",
+precio:"$40.300 / Kg",
+categoria:"otros",
+imagen:"leche-coco.JPG",
+descripcion:"Leche de coco en polvo ideal para bebidas, postres y recetas."
+},
+
+
+{
+codigo:2,
+nombre:"Stevia en Polvo",
+precio:"$28.200 / Kg",
+categoria:"endulzantes",
+imagen:"stevia-polvo.webp",
+descripcion:"Endulzante natural sin azúcar, ideal para infusiones y preparaciones."
+},
+
+
+{
+codigo:3,
+nombre:"Bicarbonato de Sodio",
+precio:"$3.500 / Kg",
+categoria:"otros",
+imagen:"bicarbonato.JPG",
+descripcion:"Muy utilizado en cocina, limpieza y distintas preparaciones."
+},
+
+
+{
+codigo:4,
+nombre:"Avena Instantánea",
+precio:"$3.000 / Kg",
+categoria:"cereales",
+imagen:"avena-instantanea.webp",
+descripcion:"Avena de cocción rápida, perfecta para desayunos y licuados."
+},
+
+
+{
+codigo:5,
+nombre:"Avena Extra Fina",
+precio:"$3.200 / Kg",
+categoria:"cereales",
+imagen:"avena-extrafina.JPG",
+descripcion:"Ideal para panificados, tortas, galletas y recetas saludables."
+},
+
+
+{
+codigo:6,
+nombre:"Avena Gruesa",
+precio:"$2.800 / Kg",
+categoria:"cereales",
+imagen:"avena-gruesa.webp",
+descripcion:"Excelente para granolas, sopas y preparaciones caseras."
+},
+
+
+{
+codigo:7,
+nombre:"Avena Tradicional",
+precio:"$2.800 / Kg",
+categoria:"cereales",
+imagen:"avena-tradicional-3.webp",
+descripcion:"Copos de avena tradicionales para desayunos y recetas."
+},
+
+
+{
+codigo:8,
+nombre:"Canela en Polvo",
+precio:"$10.500 / Kg",
+categoria:"especias",
+imagen:"canela-en-polvo.JPG",
+descripcion:"Canela molida de aroma intenso para postres e infusiones."
+},
+
+
+{
+codigo:9,
+nombre:"Azúcar Impalpable",
+precio:"$3.500 / Kg",
+categoria:"endulzantes",
+imagen:"Azucar-impalpable.JPG",
+descripcion:"Azúcar finamente molida para repostería y decoración."
+},
+
+
+{
+codigo:10,
+nombre:"Polvo para Hornear",
+precio:"$8.000 / Kg",
+categoria:"otros",
+imagen:"Polvo-de-hornear.JPG",
+descripcion:"Leudante ideal para tortas, bizcochuelos y panificados."
+},
+
+
+{
+codigo:11,
+nombre:"Gelatina sin Sabor",
+precio:"$34.500 / Kg",
+categoria:"otros",
+imagen:"gelatina-sin-sabor-bloom-200.JPEG",
+descripcion:"Gelificante sin sabor para postres y preparaciones dulces."
+},
+
+
+{
+codigo:12,
+nombre:"Cacao Amargo",
+precio:"$18.000 / Kg",
+categoria:"otros",
+imagen:"Cacao-amargo.JPG",
+descripcion:"Cacao puro ideal para bebidas, tortas y postres."
+},
+
+
+{
+codigo:13,
+nombre:"Mix de Semillas",
+precio:"$7.000 / Kg",
+categoria:"semillas",
+imagen:"Mix-de-Semillas.JPG",
+descripcion:"Combinación de semillas ideal para ensaladas y panificados."
+},
+
+
+{
+codigo:14,
+nombre:"Harina de Arroz Integral",
+precio:"$2.800 / Kg",
+categoria:"harinas",
+imagen:"Harina-de-Arroz-Integral.JPG",
+descripcion:"Harina sin trigo ideal para recetas especiales."
+},
+
+
+{
+codigo:15,
+nombre:"Harina de Algarroba Marroquí",
+precio:"$9.000 / Kg",
+categoria:"harinas",
+imagen:"Harina-de-Algarroba-Marroqui-Oscura-Importada.JPG",
+descripcion:"Harina natural de algarroba ideal para panificados y postres."
+},
+
+
+{
+codigo:16,
+nombre:"Pimienta Blanca",
+precio:"$15.500 / Kg",
+categoria:"especias",
+imagen:"Pimienta-Blanca-molida-premium.JPG",
+descripcion:"Pimienta blanca molida de aroma suave."
+},
+
+
+{
+codigo:17,
+nombre:"Pimentón Extra",
+precio:"$10.000 / Kg",
+categoria:"especias",
+imagen:"Pimenton-Extra.JPG",
+descripcion:"Pimentón de excelente calidad para condimentar comidas."
+},
+
+
+{
+codigo:18,
+nombre:"Granola con Canela",
+precio:"$8.500 / Kg",
+categoria:"cereales",
+imagen:"WhatsApp-Image-2026-02-24-at-08.53.54.JPEG",
+descripcion:"Granola crocante con toque de canela."
+},
+
+
+{
+codigo:19,
+nombre:"Pasas Medianas",
+precio:"$6.000 / Kg",
+categoria:"frutos secos",
+imagen:"pasas-de-uva-medianas.PNG",
+descripcion:"Pasas de uva dulces ideales para cocinar."
+},
+
+
+{
+codigo:20,
+nombre:"Maní Crudo",
+precio:"$4.000 / Kg",
+categoria:"frutos secos",
+imagen:"mani-crudo.JPG",
+descripcion:"Maní natural sin tostar."
+},
+
+
+{
+codigo:21,
+nombre:"Maní con Sal",
+precio:"$5.000 / Kg",
+categoria:"frutos secos",
+imagen:"mani-tostado-split-sin-sal.JPG",
+descripcion:"Maní tostado con sal."
+},
+
+
+{
+codigo:22,
+nombre:"Ciruelas",
+precio:"$13.000 / Kg",
+categoria:"frutos secos",
+imagen:"ciruela-dagen.PNG",
+descripcion:"Ciruelas deshidratadas."
+},
+
+
+{
+codigo:23,
+nombre:"Mix Patagónico",
+precio:"$16.500 / Kg",
+categoria:"frutos secos",
+imagen:"mix-patagonico-frutos-secos.JPG",
+descripcion:"Combinación de frutos secos seleccionados."
+},
+
+
+{
+codigo:24,
+nombre:"Nuez Mariposa",
+precio:"$20.000 / Kg",
+categoria:"frutos secos",
+imagen:"Nueces-Mariposa-light-Chandler.JPG",
+descripcion:"Nueces premium seleccionadas."
+},
+
+
+{
+codigo:25,
+nombre:"Maní sin Sal",
+precio:"$5.000 / Kg",
+categoria:"frutos secos",
+imagen:"mani-tostado-split-sin-sal.JPG",
+descripcion:"Maní tostado sin sal."
+},
+
+
+{
+codigo:26,
+nombre:"Mix Seco con Maní Premium",
+precio:"$20.000 / Kg",
+categoria:"frutos secos",
+imagen:"mix-seco.webp",
+descripcion:"Mix premium de frutos secos."
+},
+
+
+{
+codigo:27,
+nombre:"Mix Cervecero Económico",
+precio:"$7.000 / Kg",
+categoria:"frutos secos",
+imagen:"mix-salado-eco.JPEG",
+descripcion:"Ideal para picadas y reuniones."
+},
+
+
+{
+codigo:28,
+nombre:"Mix Seco Económico",
+precio:"$11.000 / Kg",
+categoria:"frutos secos",
+imagen:"mix-seco-eco.JPEG",
+descripcion:"Mezcla económica de frutos secos."
+},
+
+
+{
+codigo:29,
+nombre:"Maní con Cáscara",
+precio:"$5.500 / Kg",
+categoria:"frutos secos",
+imagen:"mani-cascara.JPG",
+descripcion:"Maní natural con cáscara."
+},
+
+
+{
+codigo:30,
+nombre:"Bananas Chips",
+precio:"$18.500 / Kg",
+categoria:"otros",
+imagen:"banana-chips.JPG",
+descripcion:"Rodajas de banana crocantes."
+},
+
+
+{
+codigo:31,
+nombre:"Bananitas",
+precio:"$15.800 / Kg",
+categoria:"otros",
+imagen:"bananita-granix.webp",
+descripcion:"Golosinas de banana bañadas en chocolate."
+},
+
+
+{
+codigo:32,
+nombre:"Quinoa Pop",
+precio:"$9.000 / Kg",
+categoria:"cereales",
+imagen:"quino-pop-sin-azucarr.webp",
+descripcion:"Quinoa inflada para desayunos."
+},
+
+
+{
+codigo:33,
+nombre:"Fibra Total",
+precio:"$10.000 / Kg",
+categoria:"cereales",
+imagen:"palitos-salvado1.JPG",
+descripcion:"Mezcla rica en fibra."
+},
+
+
+{
+codigo:34,
+nombre:"Aritos Frutales",
+precio:"$16.500 / Kg",
+categoria:"cereales",
+imagen:"aritos-frutales-1.JPG",
+descripcion:"Cereal frutal crocante."
+},
+
+
+{
+codigo:35,
+nombre:"Aritos con Miel",
+precio:"$16.000 / Kg",
+categoria:"cereales",
+imagen:"anillos-miel1-1.JPG",
+descripcion:"Aritos sabor miel."
+},
+{
+codigo:36,
+nombre:"Baloncitos Chocolatados",
+precio:"$11.500 / Kg",
+categoria:"cereales",
+imagen:"bolitas-choco1.JPG",
+descripcion:"Cereal crocante sabor chocolate, ideal con leche o yogur."
+},
+
+
+{
+codigo:37,
+nombre:"Almohaditas de Avellana",
+precio:"$12.000 / Kg",
+categoria:"cereales",
+imagen:"almohaditas-avellana1.JPG",
+descripcion:"Almohaditas rellenas con crema sabor avellana."
+},
+
+
+{
+codigo:38,
+nombre:"Bocaditos de Avena",
+precio:"$11.500 / Kg",
+categoria:"cereales",
+imagen:"bocadito-avena-granix.JPG",
+descripcion:"Snack crocante elaborado a base de avena."
+},
+
+
+{
+codigo:39,
+nombre:"Bocaditos de Frutilla",
+precio:"$15.000 / Kg",
+categoria:"cereales",
+imagen:"bocadito-frutilla-granix.webp",
+descripcion:"Bocaditos sabor frutilla."
+},
+
+
+{
+codigo:40,
+nombre:"Copos de Maíz Natural",
+precio:"$5.000 / Kg",
+categoria:"cereales",
+imagen:"Datil-Deglet-Noor-CCarozo-3.JPG",
+descripcion:"Copos de maíz clásicos para desayunos."
+},
+
+
+{
+codigo:41,
+nombre:"Copos de Maíz Azucarados",
+precio:"$5.800 / Kg",
+categoria:"cereales",
+imagen:"copos-de-maiz-azucarados1.JPG",
+descripcion:"Copos de maíz ligeramente azucarados."
+},
+
+
+{
+codigo:42,
+nombre:"Provenzal",
+precio:"$7.500 / Kg",
+categoria:"especias",
+imagen:"provenzal.JPG",
+descripcion:"Mezcla de ajo y perejil deshidratado."
+},
+
+
+{
+codigo:43,
+nombre:"Pimienta Negra Molida",
+precio:"$16.500 / Kg",
+categoria:"especias",
+imagen:"pimienta-negra-molida-premium.JPG",
+descripcion:"Pimienta negra molida de intenso aroma."
+},
+
+
+{
+codigo:44,
+nombre:"Condimento para Arroz",
+precio:"$16.800 / Kg",
+categoria:"especias",
+imagen:"Condimento-para-arroz.JPG",
+descripcion:"Mezcla de especias ideal para darle sabor y aroma a todo tipo de arroces."
+},
+
+{
+codigo:45,
+nombre:"Sal Marina",
+precio:"$4.000 / Kg",
+categoria:"otros",
+imagen:"Sal-Marina-fina.JPG",
+descripcion:"Sal marina natural, ideal para cocinar y condimentar todo tipo de comidas."
+},
+
+{
+codigo:46,
+nombre:"Sal de Himalaya",
+precio:"$5.000 / Kg",
+categoria:"otros",
+imagen:"Sal-del-Himalaya-fina.JPG",
+descripcion:"Sal rosada del Himalaya, perfecta para condimentar y realzar sabores."
+},
+
+{
+codigo:47,
+nombre:"Harina Integral",
+precio:"$1.500 / Kg",
+categoria:"harinas",
+imagen:"Harina-integral-FINA.JPG",
+descripcion:"Harina integral ideal para panes, masas, tartas y preparaciones caseras."
+},
+
+{
+codigo:48,
+nombre:"Azúcar de Mascabo",
+precio:"$6.600 / Kg",
+categoria:"endulzantes",
+imagen:"Azucar-de-Mascabo.JPG",
+descripcion:"Azúcar de caña sin refinar, de sabor intenso y textura húmeda."
+},
+
+{
+codigo:49,
+nombre:"Carqueja",
+precio:"$10.800 / Kg",
+categoria:"otros",
+imagen:"carqueja.JPG",
+descripcion:"Hierba tradicional utilizada para preparar infusiones."
+},
+
+{
+codigo:50,
+nombre:"Hibiscus",
+precio:"$11.000 / Kg",
+categoria:"otros",
+imagen:"hibiscus.JPG",
+descripcion:"Flor de hibiscus deshidratada, ideal para infusiones frías o calientes."
+},
+
+{
+codigo:51,
+nombre:"Cedrón",
+precio:"$25.500 / Kg",
+categoria:"otros",
+imagen:"cedron.JPG",
+descripcion:"Hierba aromática de agradable perfume, ideal para preparar infusiones."
+},
+
+{
+codigo:52,
+nombre:"Boldo",
+precio:"$22.800 / Kg",
+categoria:"otros",
+imagen:"boldo.JPG",
+descripcion:"Hojas secas de boldo para preparar infusiones de sabor característico."
+},
+
+{
+codigo:53,
+nombre:"Cola de Caballo",
+precio:"$13.400 / Kg",
+categoria:"otros",
+imagen:"cola-de-caballo.JPG",
+descripcion:"Hierba seca tradicionalmente utilizada para preparar infusiones."
+},
+
+{
+codigo:54,
+nombre:"Diente de León",
+precio:"$16.000 / Kg",
+categoria:"otros",
+imagen:"diente-de-leon.webp",
+descripcion:"Hierba seleccionada para preparar infusiones naturales."
+},
+
+{
+codigo:55,
+nombre:"Matico",
+precio:"$16.000 / Kg",
+categoria:"otros",
+imagen:"matico.JPG",
+descripcion:"Hierba aromática utilizada tradicionalmente en infusiones."
+},
+
+{
+codigo:56,
+nombre:"Stevia en Hoja",
+precio:"$30.800 / Kg",
+categoria:"endulzantes",
+imagen:"Stevia-en-hojas.JPG",
+descripcion:"Hojas secas de stevia, una alternativa natural para endulzar infusiones."
+},
+
+{
+codigo:57,
+nombre:"Peperina",
+precio:"$21.500 / Kg",
+categoria:"otros",
+imagen:"peperina.JPG",
+descripcion:"Hierba aromática de sabor fresco, ideal para mates e infusiones."
+},
+
+{
+codigo:58,
+nombre:"Sen",
+precio:"$8.000 / Kg",
+categoria:"otros",
+imagen:"sen.JPG",
+descripcion:"Hierba seca destinada a la preparación de infusiones."
+},
+
+{
+codigo:59,
+nombre:"Manzanilla Flor",
+precio:"$54.000 / Kg",
+categoria:"otros",
+imagen:"manzanilla-flor.JPG",
+descripcion:"Flores secas de manzanilla seleccionadas, ideales para infusiones."
+},
+
+{
+codigo:60,
+nombre:"Pepas Algarroba",
+precio:"$15.000 / Kg",
+categoria:"otros",
+imagen:"Pepas-Algarroba-x-1-Kg-–-LA-FRANCIA.JPG",
+descripcion:"Pepas elaboradas con algarroba, ideales para acompañar desayunos y meriendas."
+},
+
+{
+codigo:61,
+nombre:"Orégano",
+precio:"$6.700 / Kg",
+categoria:"especias",
+imagen:"Oregano-1.JPG",
+descripcion:"Orégano seco seleccionado, ideal para pizzas, salsas, carnes y ensaladas."
+},
+
+{
+codigo:62,
+nombre:"Ají Molido Premium",
+precio:"$9.400 / Kg",
+categoria:"especias",
+imagen:"Aji-molido-premium.JPG",
+descripcion:"Ají molido seleccionado, ideal para empanadas, carnes, salsas y guisos."
+},
+
+{
+codigo:63,
+nombre:"Ajo en Polvo",
+precio:"$5.300 / Kg",
+categoria:"especias",
+imagen:"Ajo-en-polvo.JPG",
+descripcion:"Ajo deshidratado en polvo, práctico para condimentar todo tipo de comidas."
+},
+
+{
+codigo:64,
+nombre:"Laurel",
+precio:"$25.100 / Kg",
+categoria:"especias",
+imagen:"Laurel.JPG",
+descripcion:"Hojas de laurel secas, ideales para guisos, estofados, salsas y carnes."
+},
+
+{
+codigo:65,
+nombre:"Nuez Moscada",
+precio:"$22.800 / Kg",
+categoria:"especias",
+imagen:"Nuez-moscada.JPG",
+descripcion:"Especia aromática ideal para salsas, pastas, purés y preparaciones dulces."
+},
+
+{
+codigo:66,
+nombre:"Perejil",
+precio:"$11.500 / Kg",
+categoria:"especias",
+imagen:"Perejil.JPG",
+descripcion:"Perejil deshidratado ideal para carnes, salsas, ensaladas y otras comidas."
+},
+
+{
+codigo:67,
+nombre:"Polvo para Hornear",
+precio:"$9.000 / Kg",
+categoria:"otros",
+imagen:"Polvo-de-hornear-x-1-Kg-–-MAYANA.JPG",
+descripcion:"Leudante para tortas, bizcochuelos, muffins y otras preparaciones de repostería."
+},
+
+{
+codigo:68,
+nombre:"Almidón de Maíz",
+precio:"$4.000 / Kg",
+categoria:"harinas",
+imagen:"Almidon-de-maiz-SIN-TACC-x-1-Kg-–-MAYANA.JPG",
+descripcion:"Almidón fino de maíz ideal para espesar salsas y preparar postres y masas."
+},
+
+{
+codigo:69,
+nombre:"Pasionaria",
+precio:"$12.500 / Kg",
+categoria:"otros",
+imagen:"pasionaria.JPG",
+descripcion:"Hierba seca seleccionada para la preparación de infusiones."
+},
+
+{
+codigo:70,
+nombre:"Chip de Chocolate",
+precio:"$20.000 / Kg",
+categoria:"otros",
+imagen:"Chips-de-chocolate-semiamargo-–-ARCOR.JPG",
+descripcion:"Chips de chocolate ideales para galletas, tortas, budines y repostería."
+},
+
+{
+codigo:71,
+nombre:"Rompe Piedra",
+precio:"$23.500 / Kg",
+categoria:"otros",
+imagen:"rompepiedra.webp",
+descripcion:"Hierba seca tradicionalmente utilizada para preparar infusiones."
+},
+
+{
+codigo:72,
+nombre:"Comino Molido",
+precio:"$9.000 / Kg",
+categoria:"especias",
+imagen:"Comino.JPG",
+descripcion:"Comino molido de aroma intenso, ideal para carnes, empanadas, guisos y salsas."
+},
+
+{
+codigo:73,
+nombre:"Gelatina sin Sabor",
+precio:"$000 / Kg",
+categoria:"otros",
+imagen:"productos/sin-imagen.webp",
+descripcion:"Gelatina neutra ideal para postres, repostería y distintas preparaciones culinarias."
+},
+
+{
+codigo:74,
+nombre:"Papas Fritas",
+precio:"$000 / Kg",
+categoria:"otros",
+imagen:"d_970774-mla74477415222_022024-c-84ec748824ffff570317443116754927-1024-1024.webp",
+descripcion:"Papas fritas crocantes, ideales para picadas y snacks."
+},
+
+{
+codigo:75,
+nombre:"Tutuca",
+precio:"$000 / Kg",
+categoria:"otros",
+imagen:"tutuca.JPG",
+descripcion:"Cereal inflado dulce y crocante, ideal para disfrutar como snack."
+},
+
+{
+codigo:76,
+nombre:"Puflito",
+precio:"$000 / Kg",
+categoria:"otros",
+imagen:"puflitos1-abe88ef77cedb6af9715888877949165-1024-1024.webp",
+descripcion:"Snack liviano y crocante, ideal para compartir o disfrutar en cualquier momento."
+},
+
+{
+codigo:77,
+nombre:"Chizito",
+precio:"$000 / Kg",
+categoria:"otros",
+imagen:"chizitos1-a5b78b737702b9d8a515888897696303-1024-1024.webp",
+descripcion:"Snack de maíz crocante y sabroso, ideal para picadas y reuniones."
+},
+
+{
+codigo:78,
+nombre:"Mix Tropical",
+precio:"$11.000 / Kg",
+categoria:"otros",
+imagen:"mix-tropical-sin-mani.JPG",
+descripcion:"Mezcla variada de ingredientes con sabores tropicales, ideal como snack."
+},
+
+{
+codigo:79,
+nombre:"Condimento para Pizza",
+precio:"$6.500 / Kg",
+categoria:"especias",
+imagen:"Condimento-de-pizza.JPG",
+descripcion:"Mezcla de especias especialmente preparada para pizzas, salsas y comidas italianas."
+}
+
+];
+
+
+let categoriaActual="todos";
+
+
+
+/*******************************************
+MOSTRAR PRODUCTOS
+********************************************/
+
+
+function mostrarProductos(){
+
+
+const contenedor=document.getElementById("listaProductos");
+
+
+const texto=document.getElementById("buscar").value.toLowerCase();
+
+
+
+contenedor.innerHTML="";
+
+
+
+const filtrados=productos.filter(producto=>{
+
+
+const categoriaOk =
+
+categoriaActual=="todos" ||
+
+producto.categoria==categoriaActual;
+
+
+
+const textoOk =
+
+
+producto.nombre.toLowerCase().includes(texto)
+
+||
+
+String(producto.codigo).includes(texto);
+
+
+
+return categoriaOk && textoOk;
+
+
+
+});
+
+
+
+
+if(filtrados.length==0){
+
+
+contenedor.innerHTML=`
+
+<div class="col-12">
+
+<div class="alert alert-warning text-center p-5">
+
+<h3>
+
+No encontramos productos
+
+</h3>
+
+</div>
+
+</div>
+
+`;
+
+return;
+
+
+}
+
+
+
+
+filtrados.forEach(producto=>{
+
+
+contenedor.innerHTML+=`
+
+
+<div class="col-lg-3 col-md-4 col-sm-6">
+
+
+<div class="producto">
+
+
+
+<img
+
+src="${producto.imagen}"
+
+onerror="this.src='productos/sin-imagen.webp'">
+
+
+
+<div class="info">
+
+
+
+<h3>
+
+${producto.nombre}
+
+</h3>
+
+
+
+
+<div class="categoriaProducto">
+
+${producto.categoria.toUpperCase()}
+
+</div>
+
+
+
+
+<div class="precio">
+
+${producto.precio}
+
+</div>
+
+
+
+
+<p>
+
+Código balanza:
+
+<b>
+
+${producto.codigo}
+
+</b>
+
+</p>
+
+
+
+
+<button
+
+class="btnProducto"
+
+onclick="verProducto(${producto.codigo})">
+
+Ver producto
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+/*******************************************
+BUSCADOR
+********************************************/
+
+
+document
+
+.getElementById("buscar")
+
+.addEventListener("keyup",mostrarProductos);
+
+
+
+
+
+
+/*******************************************
+CATEGORIAS
+********************************************/
+
+
+document
+
+.querySelectorAll(".categoria")
+
+.forEach(boton=>{
+
+
+boton.addEventListener("click",function(){
+
+
+
+document
+
+.querySelectorAll(".categoria")
+
+.forEach(b=>{
+
+
+b.classList.remove("activa");
+
+
+});
+
+
+
+this.classList.add("activa");
+
+
+
+categoriaActual=this.dataset.categoria;
+
+
+
+mostrarProductos();
+
+
+
+});
+
+
+});
+
+
+
+
+
+
+
+/*******************************************
+MODAL PRODUCTO
+********************************************/
+
+
+function verProducto(codigo){
+
+
+
+let producto=productos.find(
+
+p=>p.codigo==codigo
+
+);
+
+
+
+if(!producto)return;
+
+
+
+
+document.getElementById("tituloProducto").innerHTML=
+
+producto.nombre;
+
+
+
+
+document.getElementById("imagenProducto").src=
+
+producto.imagen;
+
+
+
+
+document.getElementById("descripcionProducto").innerHTML=
+
+producto.descripcion;
+
+
+
+
+document.getElementById("precioProducto").innerHTML=
+
+producto.precio;
+
+
+
+
+document.getElementById("codigoProducto").innerHTML=
+
+"Código balanza: "+producto.codigo;
+
+
+
+
+
+
+let mensaje=
+
+"Hola Almacén Toranzo, quiero consultar por "+
+
+producto.nombre+
+
+" código "+
+
+producto.codigo;
+
+
+
+
+
+document.getElementById("btnWhatsapp").href=
+
+"https://wa.me/5492664865720?text="+
+
+encodeURIComponent(mensaje);
+
+
+
+
+
+
+let modal=new bootstrap.Modal(
+
+document.getElementById("modalProducto")
+
+);
+
+
+
+modal.show();
+
+
+
+}
+
+
+
+
+mostrarProductos();
+
+
+
+</script>
+
+
+
+
+
+<!-- =====================================
+MODAL PRODUCTO
+====================================== -->
+
+
+<div class="modal fade" id="modalProducto">
+
+
+<div class="modal-dialog modal-lg">
+
+
+<div class="modal-content">
+
+
+
+<div class="modal-header">
+
+
+<h3 id="tituloProducto" class="fw-bold">
+
+</h3>
+
+
+
+<button class="btn-close" data-bs-dismiss="modal">
+
+</button>
+
+
+
+</div>
+
+
+
+
+<div class="modal-body">
+
+
+
+<div class="row">
+
+
+
+<div class="col-lg-6">
+
+
+<img
+
+id="imagenProducto"
+
+class="img-fluid rounded shadow">
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-6">
+
+
+
+<h4>
+
+Descripción
+
+</h4>
+
+
+
+<p id="descripcionProducto">
+
+</p>
+
+
+
+
+
+<h2
+
+id="precioProducto"
+
+style="color:#7d9a58">
+
+</h2>
+
+
+
+
+
+<p
+
+id="codigoProducto"
+
+class="fw-bold">
+
+</p>
+
+
+
+
+
+<a
+
+id="btnWhatsapp"
+
+target="_blank"
+
+class="btn btn-success btn-lg w-100">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+
+Consultar por WhatsApp
+
+
+</a>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- =====================================
+FOOTER
+====================================== -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+
+<img
+
+src="logo.png"
+
+style="height:80px">
+
+
+
+
+
+<h3 class="mt-4">
+
+Almacén Toranzo
+
+</h3>
+
+
+
+
+
+<p>
+
+Productos Naturales · Venta a Granel · Nogolí
+
+</p>
+
+
+
+
+
+<p>
+
+© 2026 - Todos los derechos reservados
+
+</p>
+
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<!-- BOOTSTRAP JS -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>
